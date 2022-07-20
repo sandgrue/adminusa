@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*--custom css--*/
+.themeColor {
+  color: #f16b64;
+}
+
+.leftLoginImage {
+  background-color: #F16B64;
+  height: 100vh;
+}
+
+.w-45 {
+  width: 45%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.rightFormPage {
+  height: 100vh;
+}
+
+.rightCont {
+  max-width: 450px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.rightCont form {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.loginForm h3 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #181c32;
+}
+
+.loginForm .form-control {
+  background-color: #f5f8fa !important;
+  border-color: #f5f8fa !important;
+  color: #5e6278 !important;
+  transition: color .2s ease;
+}
+
+.loginForm .form-control:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.loginForm label {
+  color: #181c32;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.forgotPass {
+  margin-bottom: 0.5rem;
+  margin-left: auto;
+  font-weight: 600;
+}
+
+.usaBtn {
+  background-color: #f16b64;
+  padding: 10px 25px;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.leftLoginImage img {
+  max-width: 350px;
+}
+
+.leftContent {
+  max-width: 450px;
+  margin: auto auto;
+}
+
+.contentPositn {
+  width: 100%;
+  height: 100%;
+}
