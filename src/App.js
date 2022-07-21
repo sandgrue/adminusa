@@ -43,7 +43,7 @@ function App() {
           } */}
           <Route path="/login" exact component={LoginSignup} />
           <Route path="/admin" exact component={Admin} />
-          <Route path="/editAgency/:agencyId" exact component={Editpage} />
+          <Route path="/editAgency/:agencyID" exact component={Editpage} />
 
           <Route path="/addcontent" exact component={Addcontent} />
 
