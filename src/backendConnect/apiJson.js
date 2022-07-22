@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
     login: {
         url: '/admin/login',
@@ -67,16 +68,15 @@ export default {
         headers: {
             Authorization: ''
         }
+    },
+    deleteRecord: {
+        url: '/admin/remove-content',
+        method: 'DELETE',
+        data: {
+            _id: ''
+        },
+        headers: {
+            Authorization: ''
+        }
     }
 }
-
-
-
-// created_At: "2022-07-21T07:27:16.506Z"
-// created_By: "admin"
-// id: 1
-// updated_At: "2022-07-21T07:27:16.506Z"
-// updated_By: "user"
-
-
-

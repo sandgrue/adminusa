@@ -16,7 +16,7 @@ const Editpage = () => {
     }, [parameters]);
 
     // console.log(agencyID, "QQQQ");
-    const [type, setType] = useState('');
+    // const [type, setType] = useState('');
 
 
     let token = getLocalStorage("tochen");
@@ -289,8 +289,8 @@ const Editpage = () => {
 
 
 
-{/* 
-            <Form.Group controlId="formBasicSelect">
+
+            {/* <Form.Group controlId="formBasicSelect">
                 <Form.Label>Select Norm Type</Form.Label>
                 <Form.Control
                     as="select"
@@ -304,9 +304,9 @@ const Editpage = () => {
                     <option value="CONSTANCY">Constancia</option>
                     <option value="COMPLEMENT">Complemento</option>
                 </Form.Control>
-            </Form.Group>
+            </Form.Group> */}
 
-            <select class="form-select" aria-label="Default select example">
+            {/* <select class="form-select" aria-label="Default select example">
                 <option selected>Open this select menu</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
