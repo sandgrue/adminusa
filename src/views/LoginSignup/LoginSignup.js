@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import apiConnector from '../../backendConnect/apiService';
-import { getLocalStorage, setLocalStorage } from '../../containers/functions';
+import { getLocalStorage, isItNull, setLocalStorage } from '../../containers/functions';
 
 import img from '../../assets/img/adminMain.jpg';
 import { useHistory } from 'react-router-dom';
@@ -10,6 +10,15 @@ import { useHistory } from 'react-router-dom';
 const LoginSignup = () => {
 
     let history = useHistory();
+
+
+    let token = getLocalStorage("tochen");
+
+    if (!isItNull(token)) {
+        history.push('/admin');
+    }
+
+
 
     const [formData, setformData] = useState({ email: '', password: '' });
 
@@ -52,7 +61,7 @@ const LoginSignup = () => {
                 <div class="w-45 leftLoginImage">
                     <div class="leftContent">
                         <div class="contentPositn">
-                            <img src={img} />
+                            <img src={require(`../../assets/img/logo2.svg`).default} />
                         </div>
                     </div>
                 </div>
@@ -61,12 +70,15 @@ const LoginSignup = () => {
                         <Form className="loginForm">
                             <div class="mb-5">
                                 <h3>Welcome To Start</h3>
-                                <p>New Here? <a class="themeColor">Create Account</a></p>
+                                {/* <p>New Here? <a class="themeColor">Create Account</a></p> */}
                             </div>
                             <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="name@example.com"
-                                    onChange={handlechage} name="email" />
+                                <Form.Control type="email"
+                                    placeholder="name@example.com"
+                                    autoComplete='off'
+                                    onChange={handlechage} name="email"
+                                    value={formData.email} />
                             </Form.Group>
                             <Form.Group className="mb-4">
                                 <div class="d-flex align-items-center">
@@ -77,8 +89,9 @@ const LoginSignup = () => {
                                 <Form.Control
                                     type="password"
                                     id="inputPassword5"
-                                    aria-describedby="passwordHelpBlock"
                                     placeholder="Password" onChange={handlechage} name="password"
+                                    value={formData.password}
+                                    autoComplete='off'
                                 />
                             </Form.Group>
                             <div class="d-flex align-items-center">

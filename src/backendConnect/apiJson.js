@@ -11,7 +11,12 @@ export default {
     getAllRecords: {
         url: '/admin/getRecords',
         method: "POST",
-        data: {},
+        data:
+        {
+            search: "",
+            page: '',
+            pagination: ''
+        },
         headers: {
             Authorization: ''
         }
