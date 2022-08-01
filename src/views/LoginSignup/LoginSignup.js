@@ -7,6 +7,10 @@ import { getLocalStorage, isItNull, setLocalStorage } from '../../containers/fun
 import img from '../../assets/img/adminMain.jpg';
 import { useHistory } from 'react-router-dom';
 
+
+import Loader from '../../containers/Loader';
+import { Spinner } from 'react-bootstrap';
+
 const LoginSignup = () => {
 
     let history = useHistory();
@@ -19,7 +23,7 @@ const LoginSignup = () => {
     }
 
 
-
+    const [loaderstate, setloaderstate] = useState(false);
     const [formData, setformData] = useState({ email: '', password: '' });
 
 
@@ -38,8 +42,11 @@ const LoginSignup = () => {
                     if (res.status === "SUCCESS") {
                         console.log(res, "working");
                         setLocalStorage('tochen', res.data.accessToken);
+                        setloaderstate(false);
                         history.push('/admin');
                     } else {
+                        setloaderstate(false);
+                        setformData({ email: '', password: '' });
                         console.log("API failure", 'working');
                     }
                 })
@@ -50,12 +57,26 @@ const LoginSignup = () => {
     }
 
 
-    console.log(getLocalStorage('tochen'));
+    const handleEnter = (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            // console.log("catch12");
+            setloaderstate(true);
+            logInside();
+        }
+    };
+
+    // console.log(getLocalStorage('tochen'));
 
 
 
     return (
         <>
+
+            {loaderstate ?
+                <Spinner animation="border" variant="primary" className='center' />
+                :
+                null}
 
             <div class="d-flex align-items-top w-100">
                 <div class="w-45 leftLoginImage">
@@ -92,9 +113,10 @@ const LoginSignup = () => {
                                     placeholder="Password" onChange={handlechage} name="password"
                                     value={formData.password}
                                     autoComplete='off'
+                                    onKeyPress={handleEnter}
                                 />
                             </Form.Group>
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center cursorPointer">
                                 <span class="usaBtn" onClick={logInside}>Sign In</span>
                             </div>
                         </Form>

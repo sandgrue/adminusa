@@ -38,8 +38,8 @@ const NavbarS = () => {
                             <div class="headerTop d-flex align-items-center w-100">
                                 <div class="navbar navbar-expand">
                                     <div class="headrLeftSide d-flex align-items-center w-100">
-                                        <div class="topbar-logo-header"
-                                            onClick={() => history.push('/admin')}
+                                        <div class="topbar-logo-header cursorPointer"
+                                            onClick={() => window.location.replace("/admin")}
                                         >
                                             <img src={require(`../assets/img/logo.svg`).default} />
                                         </div>
@@ -51,7 +51,7 @@ const NavbarS = () => {
                                         </div>                                */}
 
                                         <div class="ms-auto d-flex align-items-center">
-                                            <div class="logoutIcon">
+                                            <div class="logoutIcon cursorPointer">
                                                 <img onClick={toggleSignOutClick} src={require(`../assets/img/logout.svg`).default} />
                                             </div>
                                             <div class="user-box d-flex align-items-center">
