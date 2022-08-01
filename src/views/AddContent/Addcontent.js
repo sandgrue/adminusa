@@ -84,7 +84,6 @@ const Addcontent = () => {
     const apicalling = (data) => {
         apiConnector("addRecord", data, token)
             .then((res) => {
-
                 // console.log(res, "working");
                 if (res.status === "SUCCESS") {
                     togglesuccess();
@@ -345,10 +344,10 @@ const Addcontent = () => {
 
 
                             <Col xl={12} lg={12} md={12} sm={12} xs={12} className="mb-4">
-                                <div class="text-center ">
+                                <div class="text-center">
                                     {/* <Button onClick={handleubmit} className="usButton"> */}
 
-                                    <span onClick={handleubmit} className="usaBtn">SUBMIT</span>
+                                    <span onClick={handleubmit} className="usaBtn cursorPointer">SUBMIT</span>
 
                                     {/* </Button> */}
                                 </div>
@@ -475,7 +474,11 @@ const Addcontent = () => {
                     {/* <Button className="usButton" variant="primary" onClick={toggleDeleteModal}>
                         No
                     </Button> */}
-                    <Button variant="secondary" onClick={togglesuccess}>
+                    <Button variant="secondary" onClick={
+                        ()=>{
+                            togglesuccess();
+                            window.location.replace("/admin");
+                        }}>
                         OK
                     </Button>
                 </Modal.Footer>

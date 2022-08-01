@@ -393,7 +393,7 @@ const Editpage = () => {
                                             <div class="text-center ">
                                                 {/* <Button onClick={handleubmit} className="usButton"> */}
 
-                                                <span onClick={handleubmit} className="usaBtn">SUBMIT</span>
+                                                <span onClick={handleubmit} className="usaBtn cursorPointer">SUBMIT</span>
 
                                                 {/* </Button> */}
                                             </div>

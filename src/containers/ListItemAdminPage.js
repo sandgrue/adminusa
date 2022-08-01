@@ -65,10 +65,10 @@ const ListItemAdminPage = ({ item }) => {
                     <p class="mb-0">{item.address}</p>
                 </div>
                 <div class="ml-auto d-flex align-items-center">
-                    <span class="actionItem editIcon" onClick={() => pushtoedit(item._id)}>
+                    <span class="actionItem editIcon cursorPointer" onClick={() => pushtoedit(item._id)}>
                         <img src={require(`../assets/img/edit.svg`).default} />
                     </span>
-                    <span class="actionItem deleteIcon" onClick={toggleDeleteModal}>
+                    <span class="actionItem deleteIcon cursorPointer" onClick={toggleDeleteModal}>
                         <img src={require(`../assets/img/delete.svg`).default} />
                     </span>
                 </div>
@@ -99,7 +99,10 @@ const ListItemAdminPage = ({ item }) => {
                     <h2 class="modalTitle text-center">Successfully Deleted</h2>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button className="usButton" variant="primary" onClick={togglesuccessful}>
+                    <Button className="usButton" variant="primary" onClick={() => {
+                        togglesuccessful()
+                        window.location.replace("/admin")
+                    }}>
                         Ok
                     </Button>
                 </Modal.Footer>
